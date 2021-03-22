@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div id="nav">
+            <current-user></current-user>
             <router-link to="/">Home</router-link> |
             <router-link to="/register">Register</router-link> |
             <router-link to="/dashboard">Dashboard</router-link> |
@@ -12,6 +13,7 @@
 
 <script>
 import firebase from 'firebase';
+import CurrentUser from '@/components/Current-User';
 
 export default {
     methods: {
@@ -28,6 +30,9 @@ export default {
                     this.$router.push('/');
                 });
         },
+    },
+    components: {
+        'current-user': CurrentUser,
     },
 };
 </script>
